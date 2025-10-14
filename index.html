@@ -4,11 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO Meta Tags -->
-    <title>©AykolinoApps | Innovative Web-Tools & Prozessoptimierung</title>
-    <meta name="description" content="Entdecken Sie maßgeschneiderte Web-Anwendungen von AykolinoApps, die Ihren digitalen Workflow revolutionieren. Sparen Sie Zeit und steigern Sie die Effizienz mit smarten Tools wie dem MBUPS-Projekt.">
-    <meta name="keywords" content="Web-Tools, Prozessoptimierung, Workflow-Automatisierung, AykolinoApps, Web-Entwicklung, Produktivitäts-Apps, MBUPS-Projekt">
-    <meta name="author" content="Ayko Tiedtke">
+    <title>AA - AykolinoApps - Über mich -</title>
+    <meta name="uebermich" content="Vom Gastronomie-Leiter zum KI-Spezialisten: Ich entwickle als angehender Prompt-Engineer und E-Commerce Kaufmann Lösungen zur Prozessoptimierung und Automatisierung. Kontaktieren Sie mich!">
+    <meta name="Ayko Tiedtke" content="AykolinoApps">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -17,9 +15,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
-    <link rel="icon" href="favicon-32x32.png" type="image/png">
+    
+    <!-- Favicon (angepasst an dein Branding) -->
+    <link rel="icon" href="https://placehold.co/32x32/8b5cf6/f5f5f5?text=AA" type="image/png">
 
     <style>
+        /* Übernommenes Farbschema und Stil */
         body {
             font-family: 'Inter', sans-serif;
             background-color: #0a0a0a;
@@ -43,6 +44,11 @@
             transform: translateY(-3px) scale(1.05);
             box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
         }
+        
+        .social-icon:hover {
+             color: #8b5cf6;
+             transform: translateY(-2px);
+        }
 
         .glow-effect {
             position: absolute;
@@ -58,18 +64,6 @@
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
         }
-
-        .app-card {
-            background-color: rgba(23, 23, 23, 0.8);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease-in-out;
-            overflow: hidden;
-        }
-
-        .app-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(139, 92, 246, 0.5);
-        }
         
         .fade-in-up {
             opacity: 0;
@@ -80,33 +74,16 @@
             opacity: 1;
             transform: translateY(0);
         }
-
-        .scrollbar-hide::-webkit-scrollbar {
-            display: none;
-        }
-        .scrollbar-hide {
-            -ms-overflow-style: none; /* IE and Edge */
-            scrollbar-width: none; /* Firefox */
-        }
-
-        .slider-button {
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-        .slider-button.hidden {
-            opacity: 0;
-            pointer-events: none;
-            transform: scale(0.8);
-        }
         
         .header {
             animation: fadeInDown 0.8s ease-out;
         }
-        
+
         .header-scrolled {
             background-color: rgba(10, 10, 10, 0.7);
             border-bottom-color: rgba(255, 255, 255, 0.1);
         }
-
+        
         @keyframes fadeInDown {
             from {
                 opacity: 0;
@@ -125,18 +102,16 @@
     <nav id="main-header" class="header fixed top-0 left-0 w-full z-50 backdrop-blur-md border-b border-transparent transition-colors duration-300">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <!-- Logo / Brand Name -->
-                <a href="#" class="text-2xl font-bold tracking-tight text-white">
+                <a href="https://aykolino.de" class="text-2xl font-bold tracking-tight text-white">
                     Aykolino<span class="gradient-text">Apps</span>
                 </a>
 
-                <!-- Desktop Navigation -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#HIER-LINK-EINFUEGEN" class="text-gray-300 hover:text-white transition-colors">Über mich</a>
-                    <a href="#HIER-LINK-EINFUEGEN" class="text-gray-300 hover:text-white transition-colors">Kontakt</a>
+                    <a href="https://aykolino.de" class="text-gray-300 hover:text-white transition-colors">Startseite</a>
+                    <a href="mailto:ayko.tiedtke2@yahoo.de" class="text-gray-300 hover:text-white transition-colors">Kontakt</a>
                 </div>
                 
-                <!-- Mobile Menu Button -->
+                 <!-- Mobile Menu Button -->
                 <div class="md:hidden">
                     <button id="mobile-menu-button" class="text-white">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
@@ -144,132 +119,98 @@
                 </div>
             </div>
         </div>
-        <!-- Mobile Menu -->
+         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden">
-            <a href="#HIER-LINK-EINFUEGEN" class="block py-3 px-4 text-sm text-gray-200 hover:bg-gray-800">Über mich</a>
-            <a href="#HIER-LINK-EINFUEGEN" class="block py-3 px-4 text-sm text-gray-200 hover:bg-gray-800">Kontakt</a>
+            <a href="https://aykolino.de" class="block py-3 px-4 text-sm text-gray-200 hover:bg-gray-800">Startseite</a>
+            <a href="mailto:ayko.tiedtke2@yahoo.de" class="block py-3 px-4 text-sm text-gray-200 hover:bg-gray-800">Kontakt</a>
         </div>
     </nav>
 
-    <!-- Background Glow -->
+    <!-- Hintergrund-Glühen -->
     <div class="fixed top-0 left-0 w-full h-full -z-10 overflow-hidden">
         <div class="glow-effect"></div>
     </div>
 
-    <!-- Main Container -->
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Hauptcontainer -->
+    <main class="container mx-auto px-4 sm:px-6 lg:px-0">
 
         <!-- Hero Section -->
-        <header class="min-h-screen flex flex-col justify-center items-center text-center pt-20 pb-20">
-            <div class="max-w-4xl">
-                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight fade-in-up">
-                    Ihre Vision, unser Code: <span class="gradient-text">Intelligente Web-Lösungen</span>
+        <header class="min-h-[60vh] flex flex-col md:flex-row items-center justify-center gap-12 pt-12 pb-0">
+            <div class="fade-in-up w-48 h-48 md:w-64 md:h-64 flex-shrink-0">
+                <a href="https://aykolino.de"> <img src="9c517a42-c474-48e1-bd26-90f4a118198e.png" alt="Logo" class="rounded-full w-full h-full object-cover border-4 border-gray-800 shadow-2xl">
+                </a> </div>
+            
+            <!-- Text und Links -->
+            <div class="text-center md:text-left max-w-2xl">
+                <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight fade-in-up">
+                    Hey, ich bin <span class="gradient-text">Ayko</span>
                 </h1>
-                <p class="mt-6 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto fade-in-up" style="transition-delay: 150ms;">
-                    Entdecken Sie maßgeschneiderte Web-Anwendungen, die Ihren digitalen Workflow revolutionieren. Sparen Sie Zeit und steigern Sie die Effizienz mit smarten Tools.
+                <p class="mt-4 text-lg md:text-xl text-gray-300 fade-in-up" style="transition-delay: 150ms;">
+                    Wo Prompts Prozesse bewegen.
                 </p>
-                <div class="mt-12 fade-in-up" style="transition-delay: 300ms;">
-                    <a href="#mbubs" class="cta-button inline-block text-white font-bold text-lg px-8 py-4 rounded-full">
-                        Zum MBUPS-Projekt
+                <p class="mt-4 text-gray-400 max-w-xl fade-in-up" style="transition-delay: 250ms;">
+                    Ehemaliger Gastronom, jetzt angehender E-Commerce-Spezialist mit Leidenschaft für KI. Ich entwickle clevere Lösungen, um digitale Workflows zu automatisieren und Zeit zu sparen.
+                </p>
+                <!-- Social Media Links -->
+                <!-- Ersetze die untenstehenden SVGs durch deine eigenen. Empfohlene Größe: 28x28 Pixel (w-7 h-7 in Tailwind CSS). -->
+                <div class="mt-0 flex justify-center md:justify-start space-x-0 fade-in-up" style="transition-delay: 350ms;">
+                    <a href="https://www.tiktok.com/@aykolino" class="text-gray-400 social-icon transition-all" title="TikTok">
+                        <img class="w-11 h-11" src="vecteezy_tiktok-logo-png-tikok-icon-transparent-png-tikok-app-logo-png_18930463.png" viewBox="0 0 24 24" fill="currentColor">
                     </a>
-                    <p class="mt-4 text-gray-400 text-sm tracking-widest uppercase">…more coming soon</p>
+                    <a href="https://www.instagram.com/aykolino" class="text-gray-400 social-icon transition-all" title="Instagram">
+                        <img class="w-11 h-11" src="vecteezy_instagram-logo-png-instagram-icon-transparent_18930415.png" viewBox="0 0 24 24" fill="currentColor">
+                    </a>
                 </div>
             </div>
         </header>
 
-        <!-- Featured Apps Section -->
-        <section id="featured-apps" class="pb-24">
-            <h2 class="text-4xl font-bold text-center mb-4 fade-in-up">Ein Blick auf unsere Tools</h2>
-            <p class="text-center text-gray-400 mb-16 fade-in-up" style="transition-delay: 150ms;">Bewährte Helfer für Ihren Arbeitsalltag.</p>
-
-            <div class="relative">
-                <div id="apps-container" class="flex overflow-x-auto snap-x snap-mandatory space-x-8 pt-4 pb-8 scrollbar-hide -mx-4 px-4">
-
-                    <!-- App Card 1 -->
-                    <div class="snap-center flex-shrink-0 w-80 fade-in-up" style="transition-delay: 200ms;">
-                        <a href="https://utm-generator.aykolino.de" class="block h-full">
-                            <div class="app-card rounded-2xl h-full flex flex-col">
-                                <div class="h-48 overflow-hidden">
-                                    <img src="Bild_2025-10-08_103949329.png" alt="UTM-Generator Vorschau" class="w-full h-full object-cover">
-                                </div>
-                                <div class="p-8 flex-grow">
-                                    <h3 class="text-2xl font-bold text-white mb-2">UTM-Generator</h3>
-                                    <p class="text-gray-400">Erstellt schnell und fehlerfrei UTM-Parameter für präzises Kampagnen-Tracking.</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <!-- App Card 2 -->
-                    <div class="snap-center flex-shrink-0 w-80 fade-in-up" style="transition-delay: 300ms;">
-                         <a href="https://html-translator.aykolino.de" class="block h-full">
-                            <div class="app-card rounded-2xl h-full flex flex-col">
-                                <div class="h-48 overflow-hidden">
-                                    <img src="Bild_2025-10-08_103517085.png" alt="Projekt HTML-Übersetzer Vorschau" class="w-full h-full object-cover">
-                                </div>
-                                <div class="p-8 flex-grow">
-                                    <h3 class="text-2xl font-bold text-white mb-2">HTML-Translator</h3>
-                                    <p class="text-gray-400">Übersetzt Texte innerhalb von HTML-Code, ohne die Struktur zu zerstören.</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <!-- App Card 3 (Placeholder) -->
-                    <div class="snap-center flex-shrink-0 w-80 fade-in-up" style="transition-delay: 400ms;">
-                         <a href="https://aykolino.de" class="block h-full">
-                            <div class="app-card rounded-2xl h-full flex flex-col">
-                                <div class="h-48 overflow-hidden">
-                                    <img src="Gemini_Generated_Image_36l9ey36l9ey36l9 (2).png" alt="Projekt X Vorschau" class="w-full h-full object-cover">
-                                </div>
-                                <div class="p-8 flex-grow">
-                                    <h3 class="text-2xl font-bold text-white mb-2">Projekt X</h3>
-                                    <p class="text-gray-400">Ein weiteres innovatives Tool befindet sich in der Entwicklung. Bleiben Sie gespannt.</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <!-- App Card 4 (Placeholder) -->
-                    <div class="snap-center flex-shrink-0 w-80 fade-in-up" style="transition-delay: 500ms;">
-                         <a href="https://aykolino.de" class="block h-full">
-                            <div class="app-card rounded-2xl h-full flex flex-col">
-                                <div class="h-48 overflow-hidden">
-                                    <img src="Gemini_Generated_Image_pbe85qpbe85qpbe8 (1) (1).png" alt="Weitere Ideen Vorschau" class="w-full h-full object-cover">
-                                </div>
-                                <div class="p-8 flex-grow">
-                                    <h3 class="text-2xl font-bold text-white mb-2">Weitere Ideen</h3>
-                                    <p class="text-gray-400">Wir arbeiten ständig an neuen Lösungen, um komplexe Probleme zu vereinfachen. 
-                                        Bei Ideen & Anregungen gerne über <a href="https://kontakt.aykolino.de" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:underline">Kontakt</a> melden</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Navigation Buttons -->
-                <button id="prev-button" class="slider-button absolute top-1/2 -left-4 transform -translate-y-1/2 z-10 bg-gray-800/50 backdrop-blur-sm border border-gray-700 w-12 h-12 rounded-full flex items-center justify-center text-white hover:bg-gray-700/70 hidden">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" /></svg>
-                </button>
-                <button id="next-button" class="slider-button absolute top-1/2 -right-4 transform -translate-y-1/2 z-10 bg-gray-800/50 backdrop-blur-sm border border-gray-700 w-12 h-12 rounded-full flex items-center justify-center text-white hover:bg-gray-700/70 hidden">
-                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
-                </button>
+        <!-- Über Mich Section -->
+        <section id="about" class="pt-0 pb-0">
+            <div class="max-w-4xl mx-auto text-center">
+                 <h2 class="text-4xl font-bold mb-4 fade-in-up">So hat alles angefangen..</h2>
+                 <div class="text-center text-lg text-gray-300 space-y-6 fade-in-up" style="transition-delay: 300ms;">
+                     <p>
+                         Mit über zehn Jahren Erfahrung in der anspruchsvollen Welt der Gastronomie, zuletzt als Geschäftsleitung in München, habe ich gelernt, komplexe Prozesse zu managen und kundenorientiert zu arbeiten. Heute verbinde ich diese Führungsstärke mit meiner Leidenschaft für Technologie im Rahmen meiner Umschulung zum Kaufmann im E-Commerce.
+                     </p>
+                     <p>
+                         Mein Fokus liegt klar auf dem Thema Künstliche Intelligenz (KI) und Automatisierung. Im Praktikum bei Mercedes-Benz Used Parts Service vertiefe ich mein Wissen im E-Commerce und erlebe täglich, wie intelligente Prozessoptimierung den Arbeitsalltag revolutioniert.
+                     </p>
+                      <p>
+                         Angetrieben von dieser Faszination, entwickle ich bereits eigene Programme zur Automatisierung von Workflows. Mein Ziel ist es, nach meiner Ausbildung als Prompt-Engineer durchzustarten und Unternehmen dabei zu helfen, durch gezielte KI-Anwendungen effizienter zu werden. Langfristig strebe ich die Selbstständigkeit in diesem innovativen Feld an.
+                     </p>
+                 </div>
             </div>
-            
         </section>
 
-        <!-- Footer -->
-        <footer class="text-center py-10 border-t border-gray-800">
-            <p class="text-gray-500">
-                &copy; <span id="year"></span> AykolinoApps. Mit Leidenschaft.
-            </p>
-        </footer>
-    </div>
+        <!-- Kontakt Section -->
+        <section id="contact" class="text-center py-24">
+             <div class="max-w-2xl mx-auto">
+                <h2 class="text-4xl font-bold fade-in-up">Interesse geweckt?</h2>
+                <p class="mt-4 text-lg text-gray-300 fade-in-up" style="transition-delay: 150ms;">
+                    Sind Sie an einer Zusammenarbeit interessiert oder möchten ein konkretes Projekt besprechen? Kontaktieren Sie mich gerne für ein unverbindliches Erstgespräch.
+                </p>
+                <div class="mt-10 fade-in-up" style="transition-delay: 300ms;">
+                    <a href="mailto:ayko.tiedtke2@yahoo.de" class="cta-button inline-block text-white font-bold text-lg px-8 py-4 rounded-full">
+                        Kontakt aufnehmen
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-10 border-t border-gray-800">
+        <p class="text-gray-500">
+            &copy; <span id="year"></span> AykolinoApps. Mit Leidenschaft.
+        </p>
+    </footer>
 
     <script>
+        // Setzt das aktuelle Jahr im Footer
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        // Scroll-in Animation
+        // Animation beim Scrollen
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -282,58 +223,6 @@
         const elementsToAnimate = document.querySelectorAll('.fade-in-up');
         elementsToAnimate.forEach(el => observer.observe(el));
         
-        // Slider Logic
-        document.addEventListener('DOMContentLoaded', function() {
-            const container = document.getElementById('apps-container');
-            const prevBtn = document.getElementById('prev-button');
-            const nextBtn = document.getElementById('next-button');
-
-            if (!container || !prevBtn || !nextBtn) {
-                console.error("Slider elements could not be found.");
-                return;
-            }
-
-            const scrollAmount = 320 + 32; // Card width (w-80) + space-x-8
-
-            const updateButtonState = () => {
-                const isAtStart = container.scrollLeft < 1;
-                const isAtEnd = container.scrollWidth - container.scrollLeft - container.clientWidth < 1;
-
-                prevBtn.classList.toggle('hidden', isAtStart);
-                nextBtn.classList.toggle('hidden', isAtEnd);
-            };
-
-            const setupSlider = () => {
-                updateButtonState();
-                prevBtn.addEventListener('click', () => {
-                    container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-                });
-                nextBtn.addEventListener('click', () => {
-                    container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-                });
-                container.addEventListener('scroll', updateButtonState);
-                window.addEventListener('resize', updateButtonState);
-            };
-
-            // --- STABILE LÖSUNG: WARTEN BIS ALLE BILDER GELADEN SIND ---
-            const images = Array.from(container.getElementsByTagName('img'));
-            const imagePromises = images.map(img => {
-                return new Promise((resolve) => {
-                    if (img.complete) {
-                        resolve();
-                    } else {
-                        img.onload = resolve;
-                        img.onerror = resolve; // Auch bei Fehler fortfahren
-                    }
-                });
-            });
-
-            Promise.all(imagePromises).then(() => {
-                // Dieser Code wird erst ausgeführt, wenn alle Bilder garantiert geladen sind.
-                setupSlider();
-            });
-        });
-
         // Header & Mobile Menu Logic
         const header = document.getElementById('main-header');
         const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -350,8 +239,8 @@
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
-
     </script>
+
 </body>
 </html>
 
