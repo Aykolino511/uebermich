@@ -16,11 +16,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
     
-    <!-- Favicon (angepasst an dein Branding) -->
-    <link rel="icon" href="https://placehold.co/32x32/8b5cf6/f5f5f5?text=AA" type="image/png">
+    <!-- Favicon -->
+    <link rel="icon" href="favicon-32x32.png" type="image/png">
 
     <style>
-        /* Übernommenes Farbschema und Stil */
+        /* Übernommenes Farbschema und Stil von index.html */
         body {
             font-family: 'Inter', sans-serif;
             background-color: #0a0a0a;
@@ -46,8 +46,7 @@
         }
         
         .social-icon:hover {
-             color: #8b5cf6;
-             transform: translateY(-2px);
+             transform: translateY(-3px) scale(1.1);
         }
 
         .glow-effect {
@@ -94,11 +93,37 @@
                 transform: translateY(0);
             }
         }
+
+        /* Language Switcher Styles from index.html */
+        .lang-switcher-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            margin-top: 10px;
+            background-color: #111827; /* bg-gray-900 */
+            border-radius: 0.5rem; /* rounded-lg */
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+            width: 160px; /* Etwas breiter für die Flaggen */
+            z-index: 60;
+            overflow: hidden;
+            /* Animations-Eigenschaften */
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: opacity 0.2s ease-out, transform 0.2s ease-out, visibility 0.2s;
+        }
+
+        .lang-switcher-dropdown.open {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body class="overflow-x-hidden">
 
-    <!-- Header -->
+    <!-- Header von index.html eingefügt und angepasst -->
     <nav id="main-header" class="header fixed top-0 left-0 w-full z-50 backdrop-blur-md border-b border-transparent transition-colors duration-300">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
@@ -107,11 +132,35 @@
                 </a>
 
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="https://aykolino.de" class="text-gray-300 hover:text-white transition-colors">Startseite</a>
-                    <a href="mailto:ayko.tiedtke2@yahoo.de" class="text-gray-300 hover:text-white transition-colors">Kontakt</a>
+                    <a href="https://aykolino.de" class="text-gray-300 hover:text-white transition-colors" data-translate-key="navHome">Startseite</a>
+                    <a href="mailto:ayko.tiedtke2@yahoo.de" class="text-gray-300 hover:text-white transition-colors" data-translate-key="navContact">Kontakt</a>
+                    <div class="relative lang-switcher">
+                        <button id="lang-switcher-button" class="flex items-center text-gray-300 hover:text-white transition-colors">
+                            <img id="current-flag-desktop" src="" alt="Language flag" class="w-5 h-auto mr-2 rounded-sm object-cover">
+                            <span id="current-lang-desktop">DE</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+                        </button>
+                        <div id="lang-switcher-dropdown" class="lang-switcher-dropdown p-2 space-y-1">
+                            <a href="#" class="flex items-center w-full px-3 py-2 text-sm text-gray-200 hover:bg-gray-700 rounded-md transition-colors" onclick="setLanguage('de', event)">
+                                <img src="https://flagcdn.com/w40/de.png" alt="German flag" class="w-5 h-auto mr-3 rounded-sm">
+                                <span>Deutsch</span>
+                            </a>
+                            <a href="#" class="flex items-center w-full px-3 py-2 text-sm text-gray-200 hover:bg-gray-700 rounded-md transition-colors" onclick="setLanguage('en', event)">
+                                <img src="https://flagcdn.com/w40/gb.png" alt="British flag" class="w-5 h-auto mr-3 rounded-sm">
+                                <span>English</span>
+                            </a>
+                            <a href="#" class="flex items-center w-full px-3 py-2 text-sm text-gray-200 hover:bg-gray-700 rounded-md transition-colors" onclick="setLanguage('fr', event)">
+                                <img src="https://flagcdn.com/w40/fr.png" alt="French flag" class="w-5 h-auto mr-3 rounded-sm">
+                                <span>Français</span>
+                            </a>
+                            <a href="#" class="flex items-center w-full px-3 py-2 text-sm text-gray-200 hover:bg-gray-700 rounded-md transition-colors" onclick="setLanguage('es', event)">
+                                 <img src="https://flagcdn.com/w40/es.png" alt="Spanish flag" class="w-5 h-auto mr-3 rounded-sm">
+                                <span>Español</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
                 
-                 <!-- Mobile Menu Button -->
                 <div class="md:hidden">
                     <button id="mobile-menu-button" class="text-white">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
@@ -119,10 +168,24 @@
                 </div>
             </div>
         </div>
-         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden">
-            <a href="https://aykolino.de" class="block py-3 px-4 text-sm text-gray-200 hover:bg-gray-800">Startseite</a>
-            <a href="mailto:ayko.tiedtke2@yahoo.de" class="block py-3 px-4 text-sm text-gray-200 hover:bg-gray-800">Kontakt</a>
+            <a href="https://aykolino.de" class="block py-3 px-4 text-sm text-gray-200 hover:bg-gray-800" data-translate-key="navHome">Startseite</a>
+            <a href="mailto:ayko.tiedtke2@yahoo.de" class="block py-3 px-4 text-sm text-gray-200 hover:bg-gray-800" data-translate-key="navContact">Kontakt</a>
+            <div class="px-4 pt-3 pb-1 border-t border-gray-700">
+                <p class="text-xs text-gray-400 mb-2" data-translate-key="languageLabelMobile">Sprache:</p>
+                <a href="#" class="flex items-center w-full py-2 text-sm text-gray-200 hover:bg-gray-800" onclick="setLanguage('de', event)">
+                     <img src="https://flagcdn.com/w40/de.png" alt="German flag" class="w-5 h-auto mr-3 rounded-sm"> Deutsch
+                </a>
+                <a href="#" class="flex items-center w-full py-2 text-sm text-gray-200 hover:bg-gray-800" onclick="setLanguage('en', event)">
+                     <img src="https://flagcdn.com/w40/gb.png" alt="British flag" class="w-5 h-auto mr-3 rounded-sm"> English
+                </a>
+                <a href="#" class="flex items-center w-full py-2 text-sm text-gray-200 hover:bg-gray-800" onclick="setLanguage('fr', event)">
+                     <img src="https://flagcdn.com/w40/fr.png" alt="French flag" class="w-5 h-auto mr-3 rounded-sm"> Français
+                </a>
+                <a href="#" class="flex items-center w-full py-2 text-sm text-gray-200 hover:bg-gray-800" onclick="setLanguage('es', event)">
+                     <img src="https://flagcdn.com/w40/es.png" alt="Spanish flag" class="w-5 h-auto mr-3 rounded-sm"> Español
+                </a>
+            </div>
         </div>
     </nav>
 
@@ -132,50 +195,49 @@
     </div>
 
     <!-- Hauptcontainer -->
-    <main class="container mx-auto px-4 sm:px-6 lg:px-0">
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8">
 
         <!-- Hero Section -->
-        <header class="min-h-[60vh] flex flex-col md:flex-row items-center justify-center gap-12 pt-12 pb-0">
+        <header class="min-h-[60vh] flex flex-col md:flex-row items-center justify-center gap-12 pt-32 pb-12 md:pt-40 md:pb-20">
             <div class="fade-in-up w-48 h-48 md:w-64 md:h-64 flex-shrink-0">
                 <a href="https://aykolino.de"> <img src="9c517a42-c474-48e1-bd26-90f4a118198e.png" alt="Logo" class="rounded-full w-full h-full object-cover border-4 border-gray-800 shadow-2xl">
                 </a> </div>
             
             <!-- Text und Links -->
             <div class="text-center md:text-left max-w-2xl">
-                <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight fade-in-up">
+                <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight fade-in-up" data-translate-key="aboutHeroTitle">
                     Hey, ich bin <span class="gradient-text">Ayko</span>
                 </h1>
-                <p class="mt-4 text-lg md:text-xl text-gray-300 fade-in-up" style="transition-delay: 150ms;">
+                <p class="mt-4 text-lg md:text-xl text-gray-300 fade-in-up" style="transition-delay: 150ms;" data-translate-key="aboutHeroSubtitle">
                     Wo Prompts Prozesse bewegen.
                 </p>
-                <p class="mt-4 text-gray-400 max-w-xl fade-in-up" style="transition-delay: 250ms;">
+                <p class="mt-4 text-gray-400 max-w-xl fade-in-up" style="transition-delay: 250ms;" data-translate-key="aboutHeroDesc">
                     Ehemaliger Gastronom, jetzt angehender E-Commerce-Spezialist mit Leidenschaft für KI. Ich entwickle clevere Lösungen, um digitale Workflows zu automatisieren und Zeit zu sparen.
                 </p>
                 <!-- Social Media Links -->
-                <!-- Ersetze die untenstehenden SVGs durch deine eigenen. Empfohlene Größe: 28x28 Pixel (w-7 h-7 in Tailwind CSS). -->
-                <div class="mt-0 flex justify-center md:justify-start space-x-0 fade-in-up" style="transition-delay: 350ms;">
-                    <a href="https://www.tiktok.com/@aykolino" class="text-gray-400 social-icon transition-all" title="TikTok">
-                        <img class="w-11 h-11" src="vecteezy_tiktok-logo-png-tikok-icon-transparent-png-tikok-app-logo-png_18930463.png" viewBox="0 0 24 24" fill="currentColor">
+                <div class="mt-6 flex justify-center md:justify-start space-x-2 fade-in-up" style="transition-delay: 350ms;">
+                    <a href="https://www.tiktok.com/@aykolino" class="text-gray-400 social-icon transition-all p-2" title="TikTok">
+                        <img class="w-7 h-7" src="vecteezy_tiktok-logo-png-tikok-icon-transparent-png-tikok-app-logo-png_18930463.png" alt="TikTok Logo">
                     </a>
-                    <a href="https://www.instagram.com/aykolino" class="text-gray-400 social-icon transition-all" title="Instagram">
-                        <img class="w-11 h-11" src="vecteezy_instagram-logo-png-instagram-icon-transparent_18930415.png" viewBox="0 0 24 24" fill="currentColor">
+                    <a href="https://www.instagram.com/aykolino" class="text-gray-400 social-icon transition-all p-2" title="Instagram">
+                         <img class="w-7 h-7" src="vecteezy_instagram-logo-png-instagram-icon-transparent_18930415.png" alt="Instagram Logo">
                     </a>
                 </div>
             </div>
         </header>
 
         <!-- Über Mich Section -->
-        <section id="about" class="pt-0 pb-0">
+        <section id="about" class="py-12 md:py-20">
             <div class="max-w-4xl mx-auto text-center">
-                 <h2 class="text-4xl font-bold mb-4 fade-in-up">So hat alles angefangen..</h2>
-                 <div class="text-center text-lg text-gray-300 space-y-6 fade-in-up" style="transition-delay: 300ms;">
-                     <p>
+                 <h2 class="text-4xl font-bold mb-8 fade-in-up" data-translate-key="aboutSectionTitle">So hat alles angefangen..</h2>
+                 <div class="text-left md:text-center text-lg text-gray-300 space-y-6 fade-in-up" style="transition-delay: 300ms;">
+                     <p data-translate-key="aboutPara1">
                          Mit über zehn Jahren Erfahrung in der anspruchsvollen Welt der Gastronomie, zuletzt als Geschäftsleitung in München, habe ich gelernt, komplexe Prozesse zu managen und kundenorientiert zu arbeiten. Heute verbinde ich diese Führungsstärke mit meiner Leidenschaft für Technologie im Rahmen meiner Umschulung zum Kaufmann im E-Commerce.
                      </p>
-                     <p>
+                     <p data-translate-key="aboutPara2">
                          Mein Fokus liegt klar auf dem Thema Künstliche Intelligenz (KI) und Automatisierung. Im Praktikum bei Mercedes-Benz Used Parts Service vertiefe ich mein Wissen im E-Commerce und erlebe täglich, wie intelligente Prozessoptimierung den Arbeitsalltag revolutioniert.
                      </p>
-                      <p>
+                      <p data-translate-key="aboutPara3">
                          Angetrieben von dieser Faszination, entwickle ich bereits eigene Programme zur Automatisierung von Workflows. Mein Ziel ist es, nach meiner Ausbildung als Prompt-Engineer durchzustarten und Unternehmen dabei zu helfen, durch gezielte KI-Anwendungen effizienter zu werden. Langfristig strebe ich die Selbstständigkeit in diesem innovativen Feld an.
                      </p>
                  </div>
@@ -183,14 +245,14 @@
         </section>
 
         <!-- Kontakt Section -->
-        <section id="contact" class="text-center py-24">
+        <section id="contact" class="text-center py-12 md:py-24">
              <div class="max-w-2xl mx-auto">
-                <h2 class="text-4xl font-bold fade-in-up">Interesse geweckt?</h2>
-                <p class="mt-4 text-lg text-gray-300 fade-in-up" style="transition-delay: 150ms;">
+                <h2 class="text-4xl font-bold fade-in-up" data-translate-key="contactTitle">Interesse geweckt?</h2>
+                <p class="mt-4 text-lg text-gray-300 fade-in-up" style="transition-delay: 150ms;" data-translate-key="contactDesc">
                     Sind Sie an einer Zusammenarbeit interessiert oder möchten ein konkretes Projekt besprechen? Kontaktieren Sie mich gerne für ein unverbindliches Erstgespräch.
                 </p>
                 <div class="mt-10 fade-in-up" style="transition-delay: 300ms;">
-                    <a href="mailto:ayko.tiedtke2@yahoo.de" class="cta-button inline-block text-white font-bold text-lg px-8 py-4 rounded-full">
+                    <a href="mailto:ayko.tiedtke2@yahoo.de" class="cta-button inline-block text-white font-bold text-lg px-8 py-4 rounded-full" data-translate-key="contactCta">
                         Kontakt aufnehmen
                     </a>
                 </div>
@@ -199,45 +261,174 @@
 
     </main>
 
-    <!-- Footer -->
-    <footer class="text-center py-10 border-t border-gray-800">
-        <p class="text-gray-500">
+    <!-- Footer von index.html eingefügt -->
+    <footer class="text-center py-10 mt-20 border-t border-gray-800">
+        <p class="text-gray-500" data-translate-key="footerText">
             &copy; <span id="year"></span> AykolinoApps. Mit Leidenschaft.
+        </p>
+        <p class="text-xs text-gray-600 mt-2" data-translate-key="footerDisclaimer">
+            Diese Domain wird nicht für gewerbliche Zwecke genutzt.
         </p>
     </footer>
 
     <script>
-        // Setzt das aktuelle Jahr im Footer
-        document.getElementById('year').textContent = new Date().getFullYear();
+        // --- Translations-Objekt (für diese Seite angepasst) ---
+        const translations = {
+            'de': {
+                langName: 'DE',
+                flagUrl: 'https://flagcdn.com/w40/de.png',
+                navHome: 'Startseite',
+                navContact: 'Kontakt',
+                languageLabelMobile: 'Sprache:',
+                aboutHeroTitle: 'Hey, ich bin <span class="gradient-text">Ayko</span>',
+                aboutHeroSubtitle: 'Wo Prompts Prozesse bewegen.',
+                aboutHeroDesc: 'Ehemaliger Gastronom, jetzt angehender E-Commerce-Spezialist mit Leidenschaft für KI. Ich entwickle clevere Lösungen, um digitale Workflows zu automatisieren und Zeit zu sparen.',
+                aboutSectionTitle: 'So hat alles angefangen..',
+                aboutPara1: 'Mit über zehn Jahren Erfahrung in der anspruchsvollen Welt der Gastronomie, zuletzt als Geschäftsleitung in München, habe ich gelernt, komplexe Prozesse zu managen und kundenorientiert zu arbeiten. Heute verbinde ich diese Führungsstärke mit meiner Leidenschaft für Technologie im Rahmen meiner Umschulung zum Kaufmann im E-Commerce.',
+                aboutPara2: 'Mein Fokus liegt klar auf dem Thema Künstliche Intelligenz (KI) und Automatisierung. Im Praktikum bei Mercedes-Benz Used Parts Service vertiefe ich mein Wissen im E-Commerce und erlebe täglich, wie intelligente Prozessoptimierung den Arbeitsalltag revolutioniert.',
+                aboutPara3: 'Angetrieben von dieser Faszination, entwickle ich bereits eigene Programme zur Automatisierung von Workflows. Mein Ziel ist es, nach meiner Ausbildung als Prompt-Engineer durchzustarten und Unternehmen dabei zu helfen, durch gezielte KI-Anwendungen effizienter zu werden. Langfristig strebe ich die Selbstständigkeit in diesem innovativen Feld an.',
+                contactTitle: 'Interesse geweckt?',
+                contactDesc: 'Sind Sie an einer Zusammenarbeit interessiert oder möchten ein konkretes Projekt besprechen? Kontaktieren Sie mich gerne für ein unverbindliches Erstgespräch.',
+                contactCta: 'Kontakt aufnehmen',
+                footerText: '© <span id="year-footer"></span> AykolinoApps. Mit Leidenschaft.',
+                footerDisclaimer: 'Diese Domain wird nicht für gewerbliche Zwecke genutzt.'
+            },
+            'en': {
+                langName: 'EN',
+                flagUrl: 'https://flagcdn.com/w40/gb.png',
+                navHome: 'Home',
+                navContact: 'Contact',
+                languageLabelMobile: 'Language:',
+                aboutHeroTitle: 'Hey, I\'m <span class="gradient-text">Ayko</span>',
+                aboutHeroSubtitle: 'Where prompts move processes.',
+                aboutHeroDesc: 'Former restaurateur, now an aspiring e-commerce specialist with a passion for AI. I develop smart solutions to automate digital workflows and save time.',
+                aboutSectionTitle: 'How it all began..',
+                aboutPara1: 'With over ten years of experience in the demanding world of gastronomy, most recently as a manager in Munich, I have learned to manage complex processes and work in a customer-oriented manner. Today, I combine this leadership strength with my passion for technology as part of my retraining to become an e-commerce merchant.',
+                aboutPara2: 'My focus is clearly on the topic of Artificial Intelligence (AI) and automation. During my internship at Mercedes-Benz Used Parts Service, I am deepening my knowledge in e-commerce and experience daily how intelligent process optimization revolutionizes the workday.',
+                aboutPara3: 'Driven by this fascination, I am already developing my own programs to automate workflows. My goal is to kick-start my career as a prompt engineer after my training and help companies become more efficient through targeted AI applications. In the long term, I aspire to become self-employed in this innovative field.',
+                contactTitle: 'Interested?',
+                contactDesc: 'Are you interested in a collaboration or would you like to discuss a specific project? Feel free to contact me for a non-binding initial consultation.',
+                contactCta: 'Get in touch',
+                footerText: '© <span id="year-footer"></span> AykolinoApps. With passion.',
+                footerDisclaimer: 'This domain is not used for commercial purposes.'
+            },
+            'fr': {
+                langName: 'FR',
+                flagUrl: 'https://flagcdn.com/w40/fr.png',
+                navHome: 'Accueil',
+                navContact: 'Contact',
+                languageLabelMobile: 'Langue:',
+                aboutHeroTitle: 'Salut, je suis <span class="gradient-text">Ayko</span>',
+                aboutHeroSubtitle: 'Là où les prompts animent les processus.',
+                aboutHeroDesc: 'Ancien restaurateur, maintenant spécialiste en e-commerce en devenir avec une passion pour l\'IA. Je développe des solutions intelligentes pour automatiser les flux de travail numériques et gagner du temps.',
+                aboutSectionTitle: 'Comment tout a commencé..',
+                aboutPara1: "Avec plus de dix ans d'expérience dans le monde exigeant de la gastronomie, dernièrement en tant que directeur à Munich, j'ai appris à gérer des processus complexes et à travailler de manière orientée client. Aujourd'hui, je combine cette force de leadership avec ma passion pour la technologie dans le cadre de ma reconversion en commerçant en e-commerce.",
+                aboutPara2: "Mon focus est clairement sur le sujet de l'intelligence artificielle (IA) et de l'automatisation. Pendant mon stage chez Mercedes-Benz Used Parts Service, j'approfondis mes connaissances en e-commerce et je vois quotidiennement comment l'optimisation intelligente des processus révolutionne le quotidien professionnel.",
+                aboutPara3: "Poussé par cette fascination, je développe déjà mes propres programmes pour automatiser les flux de travail. Mon objectif est de démarrer ma carrière en tant qu'ingénieur de prompts après ma formation et d'aider les entreprises à devenir plus efficaces grâce à des applications d'IA ciblées. À long terme, j'aspire à devenir indépendant dans ce domaine innovant.",
+                contactTitle: 'Intéressé ?',
+                contactDesc: 'Êtes-vous intéressé par une collaboration ou souhaitez-vous discuter d\'un projet spécifique ? N\'hésitez pas à me contacter pour un premier entretien sans engagement.',
+                contactCta: 'Prendre contact',
+                footerText: '© <span id="year-footer"></span> AykolinoApps. Avec passion.',
+                footerDisclaimer: "Ce domaine n'est pas utilisé à des fins commerciales."
+            },
+            'es': {
+                langName: 'ES',
+                flagUrl: 'https://flagcdn.com/w40/es.png',
+                navHome: 'Inicio',
+                navContact: 'Contacto',
+                languageLabelMobile: 'Idioma:',
+                aboutHeroTitle: 'Hola, soy <span class="gradient-text">Ayko</span>',
+                aboutHeroSubtitle: 'Donde los prompts mueven procesos.',
+                aboutHeroDesc: 'Antiguo restaurador, ahora un aspirante a especialista en comercio electrónico con pasión por la IA. Desarrollo soluciones inteligentes para automatizar flujos de trabajo digitales y ahorrar tiempo.',
+                aboutSectionTitle: 'Cómo empezó todo..',
+                aboutPara1: 'Con más de diez años de experiencia en el exigente mundo de la gastronomía, más recientemente como gerente en Múnich, he aprendido a gestionar procesos complejos y a trabajar orientado al cliente. Hoy combino esta fortaleza de liderazgo con mi pasión por la tecnología como parte de mi reentrenamiento para convertirme en comerciante de comercio electrónico.',
+                aboutPara2: 'Mi enfoque está claramente en el tema de la Inteligencia Artificial (IA) y la automatización. Durante mi pasantía en Mercedes-Benz Used Parts Service, estoy profundizando mis conocimientos en comercio electrónico y experimento a diario cómo la optimización inteligente de procesos revoluciona la jornada laboral.',
+                aboutPara3: 'Impulsado por esta fascinación, ya estoy desarrollando mis propios programas para automatizar flujos de trabajo. Mi objetivo es iniciar mi carrera como ingeniero de prompts después de mi formación y ayudar a las empresas a ser más eficientes mediante aplicaciones de IA dirigidas. A largo plazo, aspiro a ser autónomo en este campo innovador.',
+                contactTitle: '¿Interesado?',
+                contactDesc: '¿Está interesado en una colaboración o le gustaría discutir un proyecto específico? No dude en ponerse en contacto conmigo para una primera consulta sin compromiso.',
+                contactCta: 'Ponerse en contacto',
+                footerText: '© <span id="year-footer"></span> AykolinoApps. Con pasión.',
+                footerDisclaimer: 'Este dominio no se utiliza con fines comerciales.'
+            }
+        };
 
-        // Animation beim Scrollen
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
+        // --- Haupt-Logik (von index.html übernommen) ---
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const langSwitcherButton = document.getElementById('lang-switcher-button');
+            const langSwitcherDropdown = document.getElementById('lang-switcher-dropdown');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const header = document.getElementById('main-header');
+
+            window.setLanguage = function(lang, event) {
+                if (event) event.preventDefault();
+                if (!translations[lang]) return;
+
+                localStorage.setItem('language', lang);
+                document.documentElement.lang = lang;
+
+                document.querySelectorAll('[data-translate-key]').forEach(el => {
+                    const key = el.getAttribute('data-translate-key');
+                    if (translations[lang][key]) {
+                        el.innerHTML = translations[lang][key];
+                    }
+                });
+
+                const yearSpan = document.getElementById('year') || document.getElementById('year-footer');
+                if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+
+                const currentLangDesktop = document.getElementById('current-lang-desktop');
+                const currentFlagDesktop = document.getElementById('current-flag-desktop');
+                if (currentLangDesktop) currentLangDesktop.textContent = translations[lang].langName;
+                if (currentFlagDesktop) {
+                    currentFlagDesktop.src = translations[lang].flagUrl;
+                    currentFlagDesktop.alt = `Flag of ${lang}`;
+                }
+
+                if(langSwitcherDropdown) langSwitcherDropdown.classList.remove('open');
+                if(mobileMenu) mobileMenu.classList.add('hidden');
+            }
+
+            const savedLang = localStorage.getItem('language') || 'de';
+            window.setLanguage(savedLang);
+
+            if (langSwitcherButton) {
+                langSwitcherButton.addEventListener('click', (event) => {
+                    event.stopPropagation();
+                    langSwitcherDropdown.classList.toggle('open');
+                });
+            }
+
+            window.addEventListener('click', () => {
+                if (langSwitcherDropdown && langSwitcherDropdown.classList.contains('open')) {
+                    langSwitcherDropdown.classList.remove('open');
                 }
             });
-        }, {
-            threshold: 0.1
-        });
-        const elementsToAnimate = document.querySelectorAll('.fade-in-up');
-        elementsToAnimate.forEach(el => observer.observe(el));
-        
-        // Header & Mobile Menu Logic
-        const header = document.getElementById('main-header');
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 10) {
-                header.classList.add('header-scrolled');
-            } else {
-                header.classList.remove('header-scrolled');
+            
+            if (mobileMenuButton) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
             }
-        });
-        
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 10) {
+                    header.classList.add('header-scrolled');
+                } else {
+                    header.classList.remove('header-scrolled');
+                }
+            });
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
         });
     </script>
 
