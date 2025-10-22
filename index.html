@@ -19,6 +19,12 @@
     <!-- Favicon -->
     <link rel="icon" href="favicon-32x32.png" type="image/png">
 
+    <!-- === GOATCOUNTER SKRIPT (MIT DEINEM LINK) === -->
+    <script data-goatcounter="https://aykolino.goatcounter.com/count" 
+            async 
+            src="//gc.zgo.at/count.js"></script>
+    <!-- === ENDE GOATCOUNTER === -->
+
     <style>
         /* Übernommenes Farbschema und Stil von index.html */
         body {
@@ -127,13 +133,13 @@
     <nav id="main-header" class="header fixed top-0 left-0 w-full z-50 backdrop-blur-md border-b border-transparent transition-colors duration-300">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <a href="https://aykolino.de" class="text-2xl font-bold tracking-tight text-white">
+                <a href="https://aykolino.de" class="text-2xl font-bold tracking-tight text-white" data-goatcounter-click="nav-logo-ueber-mich">
                     Aykolino<span class="gradient-text">Apps</span>
                 </a>
 
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="https://aykolino.de" class="text-gray-300 hover:text-white transition-colors" data-translate-key="navHome">Startseite</a>
-                    <a href="mailto:ayko.tiedtke2@yahoo.de" class="text-gray-300 hover:text-white transition-colors" data-translate-key="navContact">Kontakt</a>
+                    <a href="https://aykolino.de" class="text-gray-300 hover:text-white transition-colors" data-translate-key="navHome" data-goatcounter-click="nav-desktop-startseite">Startseite</a>
+                    <a href="mailto:ayko.tiedtke2@yahoo.de" class="text-gray-300 hover:text-white transition-colors" data-translate-key="navContact" data-goatcounter-click="nav-desktop-kontakt">Kontakt</a>
                     <div class="relative lang-switcher">
                         <button id="lang-switcher-button" class="flex items-center text-gray-300 hover:text-white transition-colors">
                             <img id="current-flag-desktop" src="" alt="Language flag" class="w-5 h-auto mr-2 rounded-sm object-cover">
@@ -169,8 +175,8 @@
             </div>
         </div>
         <div id="mobile-menu" class="hidden md:hidden">
-            <a href="https://aykolino.de" class="block py-3 px-4 text-sm text-gray-200 hover:bg-gray-800" data-translate-key="navHome">Startseite</a>
-            <a href="mailto:ayko.tiedtke2@yahoo.de" class="block py-3 px-4 text-sm text-gray-200 hover:bg-gray-800" data-translate-key="navContact">Kontakt</a>
+            <a href="https://aykolino.de" class="block py-3 px-4 text-sm text-gray-200 hover:bg-gray-800" data-translate-key="navHome" data-goatcounter-click="nav-mobil-startseite">Startseite</a>
+            <a href="mailto:ayko.tiedtke2@yahoo.de" class="block py-3 px-4 text-sm text-gray-200 hover:bg-gray-800" data-translate-key="navContact" data-goatcounter-click="nav-mobil-kontakt">Kontakt</a>
             <div class="px-4 pt-3 pb-1 border-t border-gray-700">
                 <p class="text-xs text-gray-400 mb-2" data-translate-key="languageLabelMobile">Sprache:</p>
                 <a href="#" class="flex items-center w-full py-2 text-sm text-gray-200 hover:bg-gray-800" onclick="setLanguage('de', event)">
@@ -200,8 +206,10 @@
         <!-- Hero Section -->
         <header class="min-h-[60vh] flex flex-col md:flex-row items-center justify-center gap-12 pt-32 pb-12 md:pt-40 md:pb-20">
             <div class="fade-in-up w-48 h-48 md:w-64 md:h-64 flex-shrink-0">
-                <a href="https://aykolino.de"> <img src="9c517a42-c474-48e1-bd26-90f4a118198e.png" alt="Logo" class="rounded-full w-full h-full object-cover border-4 border-gray-800 shadow-2xl">
-                </a> </div>
+                <a href="https://aykolino.de" data-goatcounter-click="hero-logo-link"> 
+                    <img src="9c517a42-c474-48e1-bd26-90f4a118198e.png" alt="Logo" class="rounded-full w-full h-full object-cover border-4 border-gray-800 shadow-2xl">
+                </a> 
+            </div>
             
             <!-- Text und Links -->
             <div class="text-center md:text-left max-w-2xl">
@@ -216,10 +224,10 @@
                 </p>
                 <!-- Social Media Links -->
                 <div class="mt-6 flex justify-center md:justify-start space-x-2 fade-in-up" style="transition-delay: 350ms;">
-                    <a href="https://www.tiktok.com/@aykolino" class="text-gray-400 social-icon transition-all p-2" title="TikTok">
+                    <a href="https://www.tiktok.com/@aykolino" class="text-gray-400 social-icon transition-all p-2" title="TikTok" data-goatcounter-click="social-tiktok">
                         <img class="w-7 h-7" src="vecteezy_tiktok-logo-png-tikok-icon-transparent-png-tikok-app-logo-png_18930463.png" alt="TikTok Logo">
                     </a>
-                    <a href="https://www.instagram.com/aykolino" class="text-gray-400 social-icon transition-all p-2" title="Instagram">
+                    <a href="https://www.instagram.com/aykolino" class="text-gray-400 social-icon transition-all p-2" title="Instagram" data-goatcounter-click="social-instagram">
                          <img class="w-7 h-7" src="vecteezy_instagram-logo-png-instagram-icon-transparent_18930415.png" alt="Instagram Logo">
                     </a>
                 </div>
@@ -252,7 +260,7 @@
                     Sind Sie an einer Zusammenarbeit interessiert oder möchten ein konkretes Projekt besprechen? Kontaktieren Sie mich gerne für ein unverbindliches Erstgespräch.
                 </p>
                 <div class="mt-10 fade-in-up" style="transition-delay: 300ms;">
-                    <a href="mailto:ayko.tiedtke2@yahoo.de" class="cta-button inline-block text-white font-bold text-lg px-8 py-4 rounded-full" data-translate-key="contactCta">
+                    <a href="mailto:ayko.tiedtke2@yahoo.de" class="cta-button inline-block text-white font-bold text-lg px-8 py-4 rounded-full" data-translate-key="contactCta" data-goatcounter-click="cta-kontakt">
                         Kontakt aufnehmen
                     </a>
                 </div>
@@ -362,6 +370,15 @@
             const header = document.getElementById('main-header');
 
             window.setLanguage = function(lang, event) {
+                // --- GoatCounter Tracking ---
+                if (window.goatcounter) {
+                    window.goatcounter.count({
+                        path: 'lang-select-' + lang, // z.B. 'lang-select-de'
+                        event: true
+                    });
+                }
+                // --- Ende GoatCounter ---
+
                 if (event) event.preventDefault();
                 if (!translations[lang]) return;
 
@@ -375,8 +392,12 @@
                     }
                 });
 
-                const yearSpan = document.getElementById('year') || document.getElementById('year-footer');
-                if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+                // Stelle sicher, dass das Jahr im Footer korrekt aktualisiert wird
+                const yearSpan = document.getElementById('year') || document.querySelector('[data-translate-key="footerText"] span');
+                if (yearSpan) {
+                    yearSpan.id = 'year-footer'; // ID konsistent halten
+                    yearSpan.textContent = new Date().getFullYear();
+                }
 
                 const currentLangDesktop = document.getElementById('current-lang-desktop');
                 const currentFlagDesktop = document.getElementById('current-flag-desktop');
@@ -396,6 +417,17 @@
             if (langSwitcherButton) {
                 langSwitcherButton.addEventListener('click', (event) => {
                     event.stopPropagation();
+                    
+                    // --- GoatCounter Tracking ---
+                    if (window.goatcounter) {
+                        const willBeOpen = !langSwitcherDropdown.classList.contains('open');
+                        window.goatcounter.count({
+                            path: willBeOpen ? 'lang-switcher-desktop-open' : 'lang-switcher-desktop-close',
+                            event: true
+                        });
+                    }
+                    // --- Ende GoatCounter ---
+
                     langSwitcherDropdown.classList.toggle('open');
                 });
             }
@@ -408,6 +440,16 @@
             
             if (mobileMenuButton) {
                 mobileMenuButton.addEventListener('click', () => {
+                    // --- GoatCounter Tracking ---
+                    if (window.goatcounter) {
+                        const willBeOpen = mobileMenu.classList.contains('hidden');
+                        window.goatcounter.count({
+                            path: willBeOpen ? 'mobile-menu-open' : 'mobile-menu-close',
+                            event: true
+                        });
+                    }
+                    // --- Ende GoatCounter ---
+
                     mobileMenu.classList.toggle('hidden');
                 });
             }
@@ -434,4 +476,3 @@
 
 </body>
 </html>
-
